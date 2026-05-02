@@ -30,23 +30,74 @@
 <!-- Canonical -->
 <link rel="canonical" href="https://civil-fi.org/en/"><link rel="alternate" hreflang="fr" href="https://civil-fi.org/" /><link rel="alternate" hreflang="en" href="https://civil-fi.org/en/" />
 
-<!-- Schema.org Organization -->
+<!-- Schema.org — multi-type for SEO + GEO (LLM crawlers) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Institut Civil-Fi PAFC®",
-  "alternateName": "Civil-Fi",
-  "url": "https://civil-fi.org",
-  "description": "First French civil fiduciary legal OS. Publishes the PAFC® standard, maintains the Central Fiduciary Registry, accredits its practitioners, and convenes its Surveillance Committee.",
-  "foundingDate": "2026-03-18",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Vénissieux",
-    "addressCountry": "FR"
-  },
-  "sameAs": [
-    "https://data.inpi.fr/marques/n%C2%B05238667"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://civil-fi.org/#organization",
+      "name": "Civil-Fi PAFC® Institute",
+      "alternateName": ["Civil-Fi", "Institut Civil-Fi PAFC®"],
+      "url": "https://civil-fi.org",
+      "logo": "https://civil-fi.org/logos/B_filet.svg",
+      "description": "First French civil fiduciary legal OS. Publishes the normative PAFC® standard, maintains the Central Fiduciary Registry, accredits certified practitioners, and convenes the Surveillance Committee.",
+      "slogan": "The French standard for civil fiducie",
+      "foundingDate": "2026-03-18",
+      "founders": [
+        { "@type": "Person", "name": "Clément Éric Dijoux", "jobTitle": "Co-founder · Institute President", "affiliation": "SC CDDEV" },
+        { "@type": "Person", "name": "Zo", "jobTitle": "Co-founder · RealSmart®", "affiliation": "RealSmart® (exclusive Vertical 1 FAC-Mère)" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vénissieux",
+        "addressRegion": "Auvergne-Rhône-Alpes",
+        "addressCountry": "FR"
+      },
+      "areaServed": { "@type": "Country", "name": "France" },
+      "knowsAbout": ["Civil fiducie", "French civil law", "Article 2011 Civil Code", "Dedicated estate", "Normative standard", "PAFC", "Civil fiduciary finance"],
+      "sameAs": [
+        "https://data.inpi.fr/marques/n%C2%B05238667"
+      ],
+      "contactPoint": [
+        { "@type": "ContactPoint", "contactType": "press", "email": "presse@civil-fi.org", "availableLanguage": ["French", "English"] },
+        { "@type": "ContactPoint", "contactType": "licensing", "email": "licences@civil-fi.org", "availableLanguage": ["French", "English"] },
+        { "@type": "ContactPoint", "contactType": "education", "email": "academie@civil-fi.org", "availableLanguage": ["French", "English"] }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://civil-fi.org/en/#website",
+      "url": "https://civil-fi.org/en/",
+      "name": "Civil-Fi PAFC®",
+      "description": "Institutional website of the Civil-Fi PAFC® Institute",
+      "publisher": { "@id": "https://civil-fi.org/#organization" },
+      "inLanguage": ["en-US", "fr-FR"]
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://civil-fi.org/#academy",
+      "name": "Civil-Fi Academy (CCA)",
+      "alternateName": "Civil-Fi Academy Council",
+      "description": "Training organ of the Civil-Fi Institute. Accredits lawyers, notaries, accountants, and family officers via two professional qualifications: CCFP (Certified Civil-Fi Practitioner) and CCFS (Certified Civil-Fi Sharia Specialist).",
+      "parentOrganization": { "@id": "https://civil-fi.org/#organization" },
+      "url": "https://civil-fi.org/en/#academie",
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "professional certification", "name": "CCFP — Certified Civil-Fi Practitioner" },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "professional certification", "name": "CCFS — Certified Civil-Fi Sharia Specialist" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://civil-fi.org/#standard",
+      "name": "PAFC® Standard",
+      "alternateName": "Compartmentalised Fiduciary Architecture Protocol",
+      "description": "Civil-Fi's first published protocol. Doctrine v4.0 (280 pages, addenda F1-F6 / D1-D6 / E1-E6). Versioned, dated, Soleau-deposited, opposable. Four principles: outside AMF, opposable, traceable, versioned.",
+      "provider": { "@id": "https://civil-fi.org/#organization" },
+      "serviceType": "Legal infrastructure standard",
+      "areaServed": "FR"
+    }
   ]
 }
 </script>

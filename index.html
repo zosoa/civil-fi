@@ -30,23 +30,105 @@
 <!-- Canonical -->
 <link rel="canonical" href="https://civil-fi.org/">
 
-<!-- Schema.org Organization -->
+<!-- Schema.org — multi-type for SEO + GEO (LLM crawlers) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Institut Civil-Fi PAFC®",
-  "alternateName": "Civil-Fi",
-  "url": "https://civil-fi.org",
-  "description": "Premier OS juridique fiduciaire civil français. Publie le standard PAFC®, tient le Registre Fiduciaire Central, accrédite ses praticiens et convoque son Comité de Surveillance.",
-  "foundingDate": "2026-03-18",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Vénissieux",
-    "addressCountry": "FR"
-  },
-  "sameAs": [
-    "https://data.inpi.fr/marques/n%C2%B05238667"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://civil-fi.org/#organization",
+      "name": "Institut Civil-Fi PAFC®",
+      "alternateName": ["Civil-Fi", "Civil-Fi Institut", "Institut Civil-Fi"],
+      "url": "https://civil-fi.org",
+      "logo": "https://civil-fi.org/logos/B_filet.svg",
+      "description": "Premier OS juridique fiduciaire civil français. Publie le standard normatif PAFC®, tient le Registre Fiduciaire Central, accrédite les praticiens certifiés et convoque le Comité de Surveillance.",
+      "slogan": "Le standard français de la fiducie civile",
+      "foundingDate": "2026-03-18",
+      "founders": [
+        { "@type": "Person", "name": "Clément Éric Dijoux", "jobTitle": "Co-fondateur · Président de l'Institut", "affiliation": "SC CDDEV" },
+        { "@type": "Person", "name": "Zo", "jobTitle": "Co-fondateur · RealSmart®", "affiliation": "RealSmart® (FAC-Mère exclusive Verticale 1)" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vénissieux",
+        "addressRegion": "Auvergne-Rhône-Alpes",
+        "addressCountry": "FR"
+      },
+      "areaServed": { "@type": "Country", "name": "France" },
+      "knowsAbout": ["Fiducie civile", "Droit civil français", "Article 2011 Code civil", "Patrimoine d'affectation", "Standard normatif", "PAFC", "Finance fiduciaire civile"],
+      "sameAs": [
+        "https://data.inpi.fr/marques/n%C2%B05238667"
+      ],
+      "contactPoint": [
+        { "@type": "ContactPoint", "contactType": "press", "email": "presse@civil-fi.org", "availableLanguage": ["French", "English"] },
+        { "@type": "ContactPoint", "contactType": "licensing", "email": "licences@civil-fi.org", "availableLanguage": ["French", "English"] },
+        { "@type": "ContactPoint", "contactType": "education", "email": "academie@civil-fi.org", "availableLanguage": ["French", "English"] }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://civil-fi.org/#website",
+      "url": "https://civil-fi.org",
+      "name": "Civil-Fi PAFC®",
+      "description": "Site institutionnel de l'Institut Civil-Fi PAFC®",
+      "publisher": { "@id": "https://civil-fi.org/#organization" },
+      "inLanguage": ["fr-FR", "en-US"]
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://civil-fi.org/#academy",
+      "name": "Académie Civil-Fi (CCA)",
+      "alternateName": "Conseil Civil-Fi de l'Académie",
+      "description": "Organe formateur de l'Institut Civil-Fi. Accrédite les avocats, notaires, experts-comptables et family officers via deux qualifications professionnelles : CCFP (Certifié Civil-Fi Praticien) et CCFS (Certifié Civil-Fi Spécialiste Charia).",
+      "parentOrganization": { "@id": "https://civil-fi.org/#organization" },
+      "url": "https://civil-fi.org/#academie",
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "professional certification", "name": "CCFP — Certifié Civil-Fi Praticien" },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "professional certification", "name": "CCFS — Certifié Civil-Fi Spécialiste Charia" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://civil-fi.org/#standard",
+      "name": "Standard PAFC®",
+      "alternateName": "Protocole d'Architecture Fiduciaire Compartimentée",
+      "description": "Premier protocole publié de Civil-Fi. Doctrine v4.0 (280 pages, addenda F1-F6 / D1-D6 / E1-E6). Versionnée, datée, déposée Soleau, opposable. Quatre principes : hors AMF, opposable, traçable, versionné.",
+      "provider": { "@id": "https://civil-fi.org/#organization" },
+      "serviceType": "Legal infrastructure standard",
+      "areaServed": "FR"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://civil-fi.org/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que Civil-Fi ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Civil-Fi est l'infrastructure juridique qui rend opérable la fiducie civile française à grande échelle. C'est un nouveau genre normatif fondé sur le droit civil français (et non sur la régulation des marchés financiers) — la Finance Fiduciaire Civile. Hors AMF, opposable, traçable." }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que le standard PAFC® ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "PAFC® (Protocole d'Architecture Fiduciaire Compartimentée) est le premier protocole publié de Civil-Fi. Doctrine v4.0 — 280 pages, addenda F1-F6 / D1-D6 / E1-E6 — versionnée, datée, déposée Soleau, opposable. Décrit la structure FAC-Mère / FAC-Fille, le blindage contractuel maximal (PBCM), les oracles civils (STOC), et les droits civils nommés DBA / DPC." }
+        },
+        {
+          "@type": "Question",
+          "name": "Qui peut déployer Civil-Fi PAFC® ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Civil-Fi PAFC® n'est pas un service au public. C'est une norme déployable par des cabinets institutionnels — banques, cabinets d'avocats, études notariales, fonds institutionnels — qui obtiennent une licence d'usage après formation et audit." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel est le fondement juridique ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Civil-Fi active une institution civile française existante depuis 2007 : la fiducie codifiée aux articles 2011 et suivants du Code civil, instituée par la loi n°2007-211 du 19 février 2007. L'opération transfère des biens à un fiduciaire qui les tient séparés de son patrimoine propre au profit de bénéficiaires nommés. Opposable erga omnes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que l'ACC (Avis Civil de Conformité) ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "L'ACC est le label apposé par le Comité de Surveillance après audit collégial sur 12 critères (Score de Conformité PAFC). Délibération de 5 praticiens certifiés minimum. Renouvelable tous les 24 mois. C'est l'équivalent civil d'un visa AFNOR — un label institutionnel, pas un agrément financier." }
+        }
+      ]
+    }
   ]
 }
 </script>
