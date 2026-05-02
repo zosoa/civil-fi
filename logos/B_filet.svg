@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  CIVIL-FI · L'INSTITUT — Variation B : Filet tricolore
+  Trois petites barres verticales bleu/blanc/rouge à gauche, façon AFNOR
+  Lecture : tricolore institutionnel évident sans drapeau littéral
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" role="img" aria-labelledby="title">
+  <title id="title">Civil-Fi · L'Institut — variation filet tricolore</title>
+
+  <rect width="240" height="80" fill="#FFFDF7"/>
+
+  <!-- Filet tricolore vertical à gauche -->
+  <g>
+    <rect x="14" y="28" width="3" height="32" fill="#1A2B5C"/>
+    <rect x="17" y="28" width="3" height="32" fill="#FFFDF7" stroke="#1A2B5C" stroke-width="0.4"/>
+    <rect x="20" y="28" width="3" height="32" fill="#C8102E"/>
+  </g>
+
+  <g font-family="'Poppins', 'Helvetica Neue', sans-serif">
+    <!-- "Civil·Fi" en navy uniforme -->
+    <text x="34" y="46" font-size="24" font-weight="700" fill="#1A2B5C">Civil</text>
+    <text x="100" y="46" font-size="24" font-weight="700" fill="#1A2B5C">·</text>
+    <text x="110" y="46" font-size="24" font-weight="700" fill="#1A2B5C">Fi</text>
+  </g>
+
+  <text x="34" y="64" font-family="'Poppins', sans-serif" font-size="9" font-weight="600" letter-spacing="2.4" fill="#1A2B5C" fill-opacity="0.6">L'INSTITUT</text>
+</svg>

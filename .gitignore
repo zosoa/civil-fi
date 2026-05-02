@@ -1,0 +1,29 @@
+# Claude Code local
+.claude/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vercel
+.vercel/
+
+# Node (if any tooling added later)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.*.local
+
+# Build artifacts (if any)
+dist/
+.cache/
