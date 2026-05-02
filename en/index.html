@@ -197,9 +197,16 @@ nav {
   color: var(--burgundy);
   background: rgba(139,30,63,0.04);
 }
+.nav-cta-mobile-text { display: none; }
+.nav-cta-desktop-text { display: inline; }
 @media (max-width: 768px) {
-  .nav-tail { gap: 0.6rem; }
-  .nav-lang { padding: 6px 10px; font-size: 0.66rem; }
+  nav { padding: 0.7rem 0.9rem; }
+  .nav-tail { gap: 0.5rem; }
+  .nav-lang { padding: 6px 9px; font-size: 0.6rem; letter-spacing: 0.1em; }
+  .nav-cta { padding: 10px 16px; font-size: 0.66rem; letter-spacing: 0.06em; }
+  .nav-cta-mobile-text { display: inline; }
+  .nav-cta-desktop-text { display: none; }
+  nav .nav-logo-svg { height: 44px; }
 }
 @media (max-width: 1100px) { .nav-links { display: none; } }
 @media (max-width: 768px) { nav { padding: 0.9rem 1.2rem; } }
@@ -214,6 +221,29 @@ nav {
   border-bottom-right-radius: 80px;
 }
 .s0 { z-index: 0; background: var(--warm-cream); border-radius: 0; }
+
+/* MOBILE — disable slide-stack peel : sections flow naturally,
+   no 100vh clipping, hero illustration always visible */
+@media (max-width: 980px) {
+  .slides-driver { height: auto !important; min-height: 0; }
+  .slides-sticky {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .slide {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+    will-change: auto;
+    transform: none !important;
+  }
+  .s0 { display: none; }
+  .s1, .s2 { z-index: auto; }
+}
 
 /* HERO — NAVY INSTITUTIONNEL + MAISON FRANÇAISE ENCERCLÉE */
 .s1 {
@@ -253,6 +283,10 @@ nav {
 }
 .hero-content { position: relative; z-index: 3; }
 .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0; }
+@media (max-width: 480px) {
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .hero-buttons .btn { width: 100%; padding: 16px 20px; font-size: 0.78rem; }
+}
 
 /* Bande des 5 verbes — remplace l'ancien eyebrow */
 .hero-verbs {
@@ -1108,6 +1142,16 @@ nav {
   padding: 7rem 2rem;
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 768px) {
+  .cta-section { padding: 4rem 1.4rem; }
+  .library { padding: 4.5rem 0 4rem; }
+  .mecanisme-section { padding: 4rem 1.5rem; }
+  .reseau-section { padding: 4rem 1.5rem 3rem; }
+  .archi { padding: 4rem 1.4rem 3.5rem; }
+  .pullquote-band { padding: 4rem 1.2rem; }
+  .bulletin { padding: 3.5rem 1.5rem; }
+  footer { padding: 4rem 1.4rem 2rem; }
 }
 .cta-texture {
   position: absolute; inset: 0;
@@ -2622,18 +2666,23 @@ body.modal-open { overflow: hidden; }
   gap: 0.5rem;
 }
 .archi-layer-meta dt {
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(250,246,238,0.55);
+  color: rgba(250,246,238,0.65);
 }
 .archi-layer-meta dd {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--ivory);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+@media (max-width: 768px) {
+  .archi-layer-meta dt { font-size: 0.74rem; letter-spacing: 0.1em; }
+  .archi-layer-meta dd { font-size: 0.95rem; }
+  .archi-layer-meta-title { font-size: 0.7rem; letter-spacing: 0.18em; }
 }
 .archi-layer-meta dd:last-child { margin-bottom: 0; }
 
@@ -3614,7 +3663,7 @@ footer::before {
   </ul>
   <div class="nav-tail">
     <a href="/" class="nav-lang" aria-label="French version" hreflang="fr">FR</a>
-    <a href="#contact" class="nav-cta" data-modal="contact" data-purpose="general">Contact the Institute</a>
+    <a href="#contact" class="nav-cta" data-modal="contact" data-purpose="general"><span class="nav-cta-desktop-text">Contact the Institute</span><span class="nav-cta-mobile-text">Contact</span></a>
   </div>
 </nav>
 
@@ -5089,14 +5138,16 @@ if (!reduceMotion) {
     gsap.set(heroH1El, { opacity: 1, y: 0 });
   }
 
-  // ═══ Pattern A — Slide stack peel: seul le hero pèle, primer reste base
-  gsap.to('.s1', {
-    yPercent: -100, ease: 'none',
-    scrollTrigger: {
-      trigger: '.slides-driver', scrub: true,
-      start: '0% top', end: '50% top'
-    }
-  });
+  // ═══ Pattern A — Slide stack peel: seul le hero pèle (desktop only — disabled on mobile)
+  if (window.matchMedia('(min-width: 981px)').matches) {
+    gsap.to('.s1', {
+      yPercent: -100, ease: 'none',
+      scrollTrigger: {
+        trigger: '.slides-driver', scrub: true,
+        start: '0% top', end: '50% top'
+      }
+    });
+  }
 
   // ═══ Reveal data-animate inside .s2 (primer, base layer) — fires once visible
   gsap.utils.toArray('.s2 [data-animate]').forEach((el, i) => {
