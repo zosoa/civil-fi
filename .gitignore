@@ -27,3 +27,5 @@ yarn-error.log*
 # Build artifacts (if any)
 dist/
 .cache/
+
+.vercel

@@ -1234,16 +1234,24 @@ footer {
   .s1-inner { padding: 5rem 1.5rem 4rem; }
   .hero-illustration { max-width: 300px; }
   .primer-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-  .mech-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .stats-card { grid-template-columns: 1fr 1fr; padding: 2rem 1rem; }
+  .mech-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; }
+  .stats-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: 2rem 1rem; }
   .stat-item:nth-child(2) { border-right: none; }
   .case-row, .case-row:nth-child(even) {
     flex-direction: column;
     padding: 2.5rem 1.5rem;
   }
   .case-img { flex: 0 0 auto; height: 200px; width: 100%; font-size: 4rem; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-credentials { gap: 0.6rem 1.2rem; font-size: 0.62rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-bottom-links { flex-wrap: wrap; gap: 1rem; }
   .s2-inner, .s3-inner { padding: 6rem 1.5rem 3rem; }
+}
+@media (max-width: 480px) {
+  /* On very small screens, mécanisme and stats become single column */
+  .mech-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .stats-card { grid-template-columns: 1fr 1fr; }
 }
 
 /* ════════════════════ ORGANES SECTIONS — Académie / Conseil / Registre ════════════════════ */
@@ -1666,12 +1674,16 @@ footer {
   .acad-medallions { grid-template-columns: 1fr; gap: 1.5rem; }
   .acad-medallion-card { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
   .acad-medallion-svg { width: 160px; height: 160px; }
-  .parcours-strip { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; }
+  .parcours-strip { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem 1rem; }
   .ccs-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .acc-workflow { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .acc-workflow { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
   .rfc-modes { flex-wrap: wrap; }
   .rfc-search { padding: 1.5rem; }
   .organe-section { padding: 5rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .parcours-strip { grid-template-columns: 1fr; gap: 1.2rem; padding: 2rem 1.4rem; }
+  .acc-workflow { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 /* ═══ ENRICHIR BIBLIOTHÈQUE: bandeau "4 niveaux d'accès" ═══ */
@@ -1863,13 +1875,13 @@ body.modal-open { overflow: hidden; }
 }
 .modal-close {
   position: absolute;
-  top: 1.2rem; right: 1.2rem;
-  width: 36px; height: 36px;
+  top: 1rem; right: 1rem;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: rgba(26,43,92,0.06);
   border: none;
   color: var(--navy-deep);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
@@ -3282,8 +3294,11 @@ footer::before {
   gap: 2.5rem;
   margin-bottom: 3rem;
 }
-@media (max-width: 980px) {
-  .footer-inner { grid-template-columns: 1fr 1fr; }
+@media (min-width: 769px) and (max-width: 980px) {
+  .footer-inner { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); gap: 1.8rem; }
+}
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 .footer-col h5 {
