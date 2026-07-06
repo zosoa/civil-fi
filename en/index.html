@@ -1880,6 +1880,34 @@ footer {
 }
 .rfc-result-meta dd { color: var(--body); }
 
+/* Case study link inside an RFC result */
+.rfc-result-link {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2d8659;
+  transition: color 0.2s, transform 0.2s;
+}
+.rfc-result-link:hover { color: var(--navy-deep); transform: translateX(3px); }
+
+/* "No entry" state — RFC search without a match */
+.rfc-result.is-empty {
+  background: linear-gradient(135deg, rgba(139,30,63,0.04) 0%, transparent 100%);
+  border-color: rgba(139,30,63,0.28);
+  border-left-color: var(--burgundy);
+}
+.rfc-result.is-empty .rfc-result-header { color: var(--burgundy); }
+.rfc-result.is-empty .rfc-result-header::before {
+  content: '—';
+  background: var(--burgundy);
+  animation: none;
+}
+.rfc-result.is-empty p { color: var(--body); }
+
 /* ═══ Mobile adjustments ═══ */
 @media (max-width: 980px) {
   .acad-medallions { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -4700,8 +4728,8 @@ footer::before {
         </a>
       </div>
 
-      <!-- Carte résultat exemple — pré-remplie pour démontrer -->
-      <div class="rfc-result">
+      <!-- Result card — rendered dynamically by the RFC search -->
+      <div class="rfc-result" id="rfcResult">
         <div class="rfc-result-header">Project verified · ACC active</div>
         <h4>FM-001-V1 — Villa Tenay (Vertical 1 · Real Estate)</h4>
         <p style="color: var(--body); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
@@ -4712,8 +4740,9 @@ footer::before {
           <dt>Licensee</dt><dd>RealSmart® (exclusive FAC-Mère V1)</dd>
           <dt>Practitioner</dt><dd>CCFP-0001 — Mr Pierre-Alain Ravot (AARPI Fiducie Legal)</dd>
           <dt>Members</dt><dd>≈50 (maximum capacity 100)</dd>
-          <dt>Renewal</dt><dd>ACC valide jusqu'au 18.04.2028</dd>
+          <dt>Renewal</dt><dd>ACC valid until 04.18.2028</dd>
         </dl>
+        <a href="/fm-001" class="rfc-result-link">View the full case study →</a>
       </div>
     </div>
 
@@ -4927,7 +4956,7 @@ footer::before {
       </div>
     </div>
     <div class="lib-grid-v2">
-      <a href="mailto:contact@realsmart.com?subject=Demande%20%E2%80%94%20Lexique%20normatif" class="lib-card-v2">
+      <a href="/lexique" class="lib-card-v2">
         <div class="lib-card-v2-top">
           <div class="lib-card-v2-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -4987,7 +5016,7 @@ footer::before {
       </div>
     </div>
     <div class="lib-grid-v2">
-      <a href="mailto:contact@realsmart.com?subject=Registration%20Bulletins%20de%20l%27Institut" class="lib-card-v2 is-featured">
+      <a href="/bulletins" class="lib-card-v2 is-featured">
         <div class="lib-card-v2-top">
           <div class="lib-card-v2-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8M10 10h8"/></svg>
@@ -5105,7 +5134,7 @@ footer::before {
         <li><a href="#mecanisme">PAFC® Mechanism</a></li>
         <li><a href="#ressources">Doctrine v4.0</a></li>
         <li><a href="#ressources">CCPC Charter</a></li>
-        <li><a href="#ressources">Normative lexicon</a></li>
+        <li><a href="/lexique">Normative lexicon</a></li>
         <li><a href="#ressources">Conformity Score</a></li>
       </ul>
     </div>
@@ -5124,7 +5153,7 @@ footer::before {
     <div class="footer-col">
       <h5>Press &amp; public</h5>
       <ul>
-        <li><a href="#ressources">Bulletins de l'Institut</a></li>
+        <li><a href="/bulletins">Institute Bulletins</a></li>
         <li><a href="#contact">Press contact</a></li>
         <li><a href="#contact">Suivre l'Institut</a></li>
         <li><a href="https://data.inpi.fr/marques/n%C2%B05238667" rel="noopener">Public INPI record</a></li>
@@ -5498,18 +5527,134 @@ if (!reduceMotion) {
 
 
 <script>
-// RFC search tab switcher — purely visual demo
-document.querySelectorAll('.rfc-modes .rfc-mode').forEach(btn => {
-  btn.addEventListener('click', e => {
-    document.querySelectorAll('.rfc-modes .rfc-mode').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const mode = btn.dataset.mode;
-    const input = document.querySelector('.rfc-search-input input');
-    if (mode === 'praticien') { input.placeholder = 'Numéro CCFP (ex. CCFP-0001) ou nom du praticien…'; input.value = 'CCFP-0001'; }
-    else if (mode === 'cachet') { input.placeholder = 'Référence ACC (ex. ACC-VT01-2026)…'; input.value = 'ACC-VT01-2026'; }
-    else { input.placeholder = 'Project ID (e.g. FM-001-V1) or licensee name…'; input.value = 'FM-001-V1'; }
+// ═══════════════════════════════════════════════════════════════════
+// RFC — Central Fiduciary Registry: real search over registered
+// entries. Source of truth: this data block, updated on every
+// registration / renewal / revocation.
+// ═══════════════════════════════════════════════════════════════════
+const RFC_DATA = {
+  projet: [
+    {
+      id: 'FM-001-V1',
+      alias: ['FM-001', 'VILLA TENAY', 'TENAY', 'REALSMART'],
+      header: 'Project verified · ACC active',
+      title: 'FM-001-V1 — Villa Tenay (Vertical 1 · Real Estate)',
+      desc: 'Pilot operated by RealSmart, first exclusive licensee on the real estate vertical.',
+      meta: [
+        ['Status', 'In deployment · ACC affixed on 04.18.2026'],
+        ['Licensee', 'RealSmart® (exclusive FAC-Mère V1)'],
+        ['Practitioner', 'CCFP-0001 — Mr Pierre-Alain Ravot (AARPI Fiducie Legal)'],
+        ['Members', '≈50 (maximum capacity 100)'],
+        ['Renewal', 'ACC valid until 04.18.2028']
+      ],
+      link: { href: '/fm-001', label: 'View the full case study →' }
+    }
+  ],
+  praticien: [
+    {
+      id: 'CCFP-0001',
+      alias: ['RAVOT', 'PIERRE-ALAIN RAVOT', 'FIDUCIE LEGAL'],
+      header: 'Practitioner verified · active certification',
+      title: 'CCFP-0001 — Mr Pierre-Alain Ravot',
+      desc: 'Partner lawyer, AARPI Fiducie Legal. First certified practitioner of the network, signatory of the Preventive Legal Opinion.',
+      meta: [
+        ['Status', 'Active · certified MMXXVI'],
+        ['Qualification', 'CCFP — Certified Civil-Fi Practitioner'],
+        ['Firm', 'AARPI Fiducie Legal'],
+        ['Projects', 'FM-001-V1 — Villa Tenay (Vertical 1)']
+      ]
+    }
+  ],
+  cachet: [
+    {
+      id: 'ACC-VT01-2026',
+      alias: ['ACC-VT01', 'VT01'],
+      header: 'Seal verified · active',
+      title: 'ACC-VT01-2026 — Civil Conformity Opinion',
+      desc: 'Seal affixed to project FM-001-V1 (Villa Tenay) after collegial deliberation of the Surveillance Committee.',
+      meta: [
+        ['Status', 'Active'],
+        ['Affixed on', '04.18.2026'],
+        ['Project', 'FM-001-V1 — Villa Tenay'],
+        ['Validity', 'Until 04.18.2028 · renewable upon audit']
+      ],
+      link: { href: '/fm-001', label: 'View the labelled project →' }
+    }
+  ]
+};
+
+(function initRfcSearch() {
+  const input = document.querySelector('.rfc-search-input input');
+  const resultBox = document.getElementById('rfcResult');
+  if (!input || !resultBox) return;
+  let mode = 'projet';
+
+  const esc = (s) => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function render(entry, query) {
+    if (entry) {
+      resultBox.classList.remove('is-empty');
+      resultBox.innerHTML =
+        '<div class="rfc-result-header">' + esc(entry.header) + '</div>' +
+        '<h4>' + esc(entry.title) + '</h4>' +
+        '<p style="color: var(--body); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">' + esc(entry.desc) + '</p>' +
+        '<dl class="rfc-result-meta">' +
+        entry.meta.map(([dt, dd]) => '<dt>' + esc(dt) + '</dt><dd>' + esc(dd) + '</dd>').join('') +
+        '</dl>' +
+        (entry.link ? '<a href="' + entry.link.href + '" class="rfc-result-link">' + esc(entry.link.label) + '</a>' : '');
+    } else {
+      resultBox.classList.add('is-empty');
+      resultBox.innerHTML =
+        '<div class="rfc-result-header">No registry entry</div>' +
+        '<h4>“' + esc(query) + '” does not match any registration</h4>' +
+        '<p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">The RFC only references labelled projects, certified practitioners, and seals affixed by the Institute. Check the identifier, or <a href="#contact" style="color: var(--burgundy); font-weight: 700;" data-modal="contact" data-purpose="rfc">contact the Registry</a>.</p>';
+      const trig = resultBox.querySelector('[data-modal="contact"]');
+      if (trig) trig.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('contactModal')?.classList.add('is-open');
+        document.getElementById('contactModal')?.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        const sel = document.getElementById('modalPurpose');
+        if (sel) sel.value = 'rfc';
+      });
+    }
+  }
+
+  function search(q) {
+    const query = (q || '').trim();
+    if (!query) { render(RFC_DATA[mode][0]); return; }
+    const norm = query.toUpperCase();
+    const pool = RFC_DATA[mode];
+    const found = pool.find(e =>
+      e.id.toUpperCase() === norm ||
+      e.id.toUpperCase().includes(norm) ||
+      (e.alias || []).some(a => a.includes(norm) || norm.includes(a)) ||
+      e.title.toUpperCase().includes(norm)
+    );
+    render(found || null, query);
+  }
+
+  document.querySelectorAll('.rfc-modes .rfc-mode').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.rfc-modes .rfc-mode').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      mode = btn.dataset.mode;
+      if (mode === 'praticien') { input.placeholder = 'CCFP number (e.g. CCFP-0001) or practitioner name…'; }
+      else if (mode === 'cachet') { input.placeholder = 'ACC reference (e.g. ACC-VT01-2026)…'; }
+      else { input.placeholder = 'Project ID (e.g. FM-001-V1) or licensee name…'; }
+      render(RFC_DATA[mode][0]);
+    });
   });
-});
+
+  let t = null;
+  input.addEventListener('input', () => {
+    clearTimeout(t);
+    t = setTimeout(() => search(input.value), 200);
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { clearTimeout(t); search(input.value); }
+  });
+})();
 </script>
 
 
