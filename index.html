@@ -142,8 +142,12 @@
 
 <style>
 :root {
-  /* Warm tones */
-  --warm-cream: #f8efe5;
+  /* Base surfaces — plain white background pass */
+  --warm-cream: #ffffff;   /* page background → white */
+  --ivory: #ffffff;        /* light-on-dark text stays legible; light surfaces → white */
+  --surface: #f4f5f7;      /* neutral grey for small components on white (icons, fields, chips) */
+  --surface-2: #eceef1;    /* slightly deeper grey — hover / borders */
+  /* Warm accents (kept — they read well on white + navy) */
   --peach: #ebc7b5;
   --peach-d: #d4a090;
   --terracotta: #C2553A;
@@ -155,7 +159,6 @@
   --navy-light: #4A6BCC;
   --rouge: #C8102E;
   /* Ceremonial / editorial accents */
-  --ivory: #FAF6EE;
   --parchment: #F2E9D8;
   --burgundy: #8B1E3F;
   --burgundy-d: #6B1730;
@@ -227,14 +230,25 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 1rem; display: block;
 }
 
+/* ════════════════════ WHITE-BG RHYTHM — hairline dividers between
+   consecutive light sections so they don't blend on plain white ════════════════════ */
+.reseau-section,
+.mecanisme-section,
+.b2b2c,
+.library,
+.bulletin,
+footer {
+  border-top: 1px solid rgba(26,43,92,0.07);
+}
+
 /* ════════════════════ NAV ════════════════════ */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 1rem 3rem;
   display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 1px dashed rgba(26,43,92,0.25);
-  background: rgba(248,239,229,0.92);
+  border-bottom: 1px solid rgba(26,43,92,0.10);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -671,7 +685,7 @@ nav {
   width: 80px; height: 80px;
   margin: 0 auto 1.4rem;
   border-radius: 50%;
-  background: var(--warm-cream);
+  background: var(--surface);
   border: 1.5px solid var(--teal-deep);
   display: flex; align-items: center; justify-content: center;
   color: var(--teal-deep);
@@ -702,6 +716,88 @@ nav {
 }
 @media (min-width: 980px) {
   .stage:not(:last-child) .stage-arrow { display: block; }
+}
+
+/* ════════════════════ EN CLAIR — explainer sans jargon ════════════════════ */
+.enclair {
+  background: #ffffff;
+  padding: 6rem 2rem 5.5rem;
+  border-top: 1px solid rgba(26,43,92,0.07);
+  position: relative;
+}
+.enclair-inner { max-width: 1080px; margin: 0 auto; }
+.enclair .section-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.enclair .section-header h2 em {
+  font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  font-style: italic; font-weight: 500; color: var(--burgundy);
+}
+.enclair-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+  margin-bottom: 2.6rem;
+}
+.enclair-card {
+  background: var(--surface);
+  border: 1px solid rgba(26,43,92,0.07);
+  border-radius: 18px;
+  padding: 1.9rem 2rem;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s;
+}
+.enclair-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(26,43,92,0.08);
+}
+.enclair-q {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+.enclair-a {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--body);
+  margin: 0;
+}
+.enclair-a strong { color: var(--navy-deep); font-weight: 700; }
+.enclair-analogy {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 2.2rem;
+  background: linear-gradient(135deg, rgba(139,30,63,0.05), rgba(194,85,58,0.04));
+  border: 1px solid rgba(139,30,63,0.14);
+  border-radius: 18px;
+}
+.enclair-analogy p {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--navy-deep);
+  margin: 0 0 1.2rem;
+}
+.enclair-analogy p strong { font-style: normal; color: var(--burgundy); }
+.enclair-deep {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  transition: color 0.2s, transform 0.2s;
+}
+.enclair-deep:hover { color: var(--burgundy); transform: translateX(3px); }
+@media (max-width: 768px) {
+  .enclair { padding: 4rem 1.4rem; }
+  .enclair-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .enclair-card { padding: 1.6rem 1.5rem; }
+  .enclair-analogy { padding: 1.6rem 1.4rem; }
 }
 
 /* RESEAU SECTION — anciennement s4, maintenant section normale */
@@ -1650,9 +1746,9 @@ footer {
 .ccs-cachet-display {
   position: relative;
   padding: 3rem;
-  background: var(--warm-cream);
+  background: var(--surface);
   border-radius: 12px;
-  box-shadow: 0 24px 50px rgba(26,43,92,0.18);
+  box-shadow: 0 24px 50px rgba(26,43,92,0.14);
   text-align: center;
 }
 .ccs-cachet-display::before {
@@ -2564,7 +2660,7 @@ body.modal-open { overflow: hidden; }
   font-family: 'Nunito Sans', sans-serif;
   font-size: 0.95rem;
   color: var(--navy-deep);
-  background: var(--warm-cream);
+  background: var(--surface);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .bulletin-form input[type="email"]:focus {
@@ -3807,7 +3903,7 @@ footer::before {
           </h1>
           <p>Civil-Fi est l'infrastructure juridique qui rend opérable la fiducie civile française à grande échelle — pour détenir un actif réel sans le convertir en produit financier. <strong style="color:var(--peach);font-weight:600;">Hors AMF, opposable, traçable.</strong></p>
           <div class="hero-buttons" data-animate>
-            <a href="#mecanisme" class="btn" data-magnetic>Comprendre en 2 minutes</a>
+            <a href="#en-clair" class="btn" data-magnetic>Comprendre en 2 minutes</a>
             <a href="#cas" class="btn btn-outline" data-magnetic>Voir des cas concrets</a>
           </div>
           <div class="hero-creds" data-animate>
@@ -3881,9 +3977,9 @@ footer::before {
       </div>
       <div class="wave">
         <svg viewBox="0 0 1000 120" preserveAspectRatio="none">
-          <path fill="rgba(248,239,229,0.3)" d="M0,60 C150,100 350,0 500,60 C650,120 850,20 1000,60 L1000,120 L0,120 Z"/>
-          <path fill="rgba(248,239,229,0.6)" d="M0,80 C200,40 400,100 600,70 C800,40 900,90 1000,80 L1000,120 L0,120 Z"/>
-          <path fill="#f8efe5" d="M0,90 C250,60 500,110 750,85 C900,70 950,105 1000,95 L1000,120 L0,120 Z"/>
+          <path fill="rgba(255,255,255,0.35)" d="M0,60 C150,100 350,0 500,60 C650,120 850,20 1000,60 L1000,120 L0,120 Z"/>
+          <path fill="rgba(255,255,255,0.65)" d="M0,80 C200,40 400,100 600,70 C800,40 900,90 1000,80 L1000,120 L0,120 Z"/>
+          <path fill="#ffffff" d="M0,90 C250,60 500,110 750,85 C900,70 950,105 1000,95 L1000,120 L0,120 Z"/>
         </svg>
       </div>
     </div>
@@ -3938,6 +4034,44 @@ footer::before {
 
   </div>
 </div>
+
+<!-- ════════════════════ EN CLAIR — explainer sans jargon ════════════════════ -->
+<section class="enclair" id="en-clair">
+  <div class="enclair-inner">
+    <div class="section-header" data-animate>
+      <span class="label" style="color: var(--burgundy);">En clair, sans jargon</span>
+      <h2>Concrètement,<br><em>c'est quoi</em> ?</h2>
+      <p>Avant la doctrine et les acronymes — l'idée en quatre questions simples.</p>
+    </div>
+
+    <div class="enclair-grid">
+      <article class="enclair-card" data-animate>
+        <div class="enclair-q">1 — C'est quoi ?</div>
+        <p class="enclair-a">Civil-Fi permet à <strong>plusieurs personnes de posséder ensemble un bien réel</strong> — une maison, un domaine, une centrale solaire — de façon parfaitement légale, sans transformer ce bien en produit financier.</p>
+      </article>
+
+      <article class="enclair-card" data-animate>
+        <div class="enclair-q">2 — Pourquoi c'est nouveau ?</div>
+        <p class="enclair-a">Aujourd'hui, co-détenir un bien impose soit un montage financier lourd et réglementé, soit des structures fragiles. Civil-Fi s'appuie sur un outil <strong>déjà présent dans le Code civil depuis 2007</strong> — mais que personne n'avait rendu simple, sûr et répétable à grande échelle.</p>
+      </article>
+
+      <article class="enclair-card" data-animate>
+        <div class="enclair-q">3 — Pourquoi c'est sûr ?</div>
+        <p class="enclair-a">Le bien est <strong>juridiquement séparé et protégé</strong>. Chaque projet est audité et labellisé par un comité indépendant. Et tout est <strong>vérifiable publiquement</strong> dans un registre — comme on vérifie un diplôme ou une plaque d'immatriculation.</p>
+      </article>
+
+      <article class="enclair-card" data-animate>
+        <div class="enclair-q">4 — Ça change quoi ?</div>
+        <p class="enclair-a">Un exemple réel : <strong>une cinquantaine de personnes possèdent ensemble une villa dans l'Ain.</strong> Chacune détient un droit réel sur le bien et une part de sa performance — pas une action, pas un placement financier. <a href="/fm-001" style="color: var(--burgundy); font-weight: 700;">Voir le cas →</a></p>
+      </article>
+    </div>
+
+    <div class="enclair-analogy" data-animate>
+      <p>Pensez à Civil-Fi comme au <strong>label AOC</strong> ou à la <strong>norme NF</strong> : un standard public et vérifiable qui dit ce qui est conforme — appliqué ici à la <strong>propriété partagée d'un bien réel</strong>.</p>
+      <a href="#standard" class="enclair-deep">Version juriste — l'architecture normative →</a>
+    </div>
+  </div>
+</section>
 
 <!-- ════════════════════ STATS / RÉSEAU — extracted from slide-stack ════════════════════ -->
 <section class="reseau-section" id="reseau">
@@ -5271,8 +5405,8 @@ if (!reduceMotion) {
     });
   });
 
-  // ═══ Reveal data-animate inside extracted sections (reseau, mecanisme)
-  ['.reseau-section', '.mecanisme-section'].forEach((sel) => {
+  // ═══ Reveal data-animate inside extracted sections (enclair, reseau, mecanisme)
+  ['.enclair', '.reseau-section', '.mecanisme-section'].forEach((sel) => {
     const section = document.querySelector(sel);
     if (!section) return;
     gsap.utils.toArray(`${sel} [data-animate]`).forEach((el, i) => {
