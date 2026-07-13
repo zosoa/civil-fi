@@ -18,9 +18,9 @@
 
 **Civil-Fi** désigne un nouveau genre normatif de finance fondé sur le **droit civil français** et non sur la régulation des marchés financiers. C'est la *Finance Fiduciaire Civile* — patrimoines d'affectation, droits civils nommés, opposabilité *erga omnes*. Civil-Fi nomme un genre d'opérations dans l'écosystème juridique français, comme « .com » nomme un genre d'objets sur Internet.
 
-**PAFC®** (Protocole d'Architecture Fiduciaire Compartimentée) est le **premier protocole publié** de Civil-Fi. Versionné, daté, opposable. Il décrit la structure FAC-Mère / FAC-Fille, le mécanisme de blindage contractuel maximal (PBCM), les oracles civils (STOC) et les droits civils nommés DBA / DPC.
+**PAFC®** est le protocole d'architecture fiduciaire de Civil-Fi — le **premier protocole publié** du standard. Versionné, daté, opposable. Il décrit la structure FAC-Mère / FAC-Fille, le mécanisme d'étanchéité inter-compartiments défini par la Doctrine, la spécification technique des oracles civils, et les droits civils nommés, au premier rang desquels le Droit Bénéficiaire Adhérent (DBA).
 
-**L'Institut Civil-Fi PAFC®** est l'autorité publiante. Il s'appuie sur trois organes distincts :
+**L'Institut Civil-Fi PAFC®** publie et tient le standard. Il s'appuie sur trois organes distincts :
 - **CCA** (Conseil Civil-Fi de l'Académie) — formation et accréditation des praticiens
 - **CCS** (Comité Civil-Fi de Surveillance) — juridiction collégiale, appose le label ACC
 - **RFC** (Registre Fiduciaire Central) — publication horodatée, vérifiable publiquement
@@ -29,7 +29,7 @@
 
 1. **Le fondement juridique** — Code civil français, articles 2011 → 2030, loi n°2007-211 du 19 février 2007. Civil-Fi ne crée aucun droit nouveau ; il active une institution civile française existante depuis 2007.
 2. **Le protocole PAFC®** — doctrine v4.0, 280 pages, déposée Soleau, opposable.
-3. **L'autorité publiante** — Institut, 3 organes, marques INPI, OJP signée.
+3. **L'Institut publie et tient le standard** — 3 organes, marques INPI, OJP signée.
 4. **Le label ACC** — Avis Civil de Conformité, apposé par le CCS après audit collégial sur 12 critères. Renouvelable tous les 24 mois.
 5. **La traçabilité publique** — RFC indexe publiquement chaque praticien, chaque projet, chaque cachet. Vérifiable en libre accès.
 
@@ -60,14 +60,14 @@ Civil-Fi PAFC® n'est pas vendu au grand public. Il est **licencié** à des cab
 ## Bibliothèque normative
 
 12 documents versionnés, 4 niveaux d'accès :
-- **Public** — Charte CCPC, Score de Conformité, STOC, Annuaire RFC
-- **Identifié** — OJP, Lexique normatif (80 termes), FAQ certifiées, Bulletins
-- **CCFP actif** — Convention type FAC-Mère, Modèle FAC-Fille, Doctrine v4.0 intégrale, PBCM
-- **NDA** — documents de licence
+- **Public** — Charte CCPC, Score de Conformité, Annuaire RFC
+- **Identifié** — OJP, Lexique Officiel (couche publique de 14 termes), FAQ certifiées, Bulletins
+- **CCFP actif** — Convention type FAC-Mère, Modèle FAC-Fille, Doctrine v4.0 intégrale, mécanisme d'étanchéité inter-compartiments
+- **NDA** — documents de licence et spécification technique des oracles (phase de protection PI)
 
-## Lexique normatif (80 termes-clés)
+## Lexique Officiel — couche publique de 14 termes
 
-DBA, DPC, FAC-Mère, FAC-Fille, oracle civil, score, ACC, RFC, PBCM, STOC, CCPC, CCFP, CCFS, CCA, CCS, fiducie civile, patrimoine d'affectation, opposabilité erga omnes, blindage contractuel maximal, etc.
+Civil-Fi, PAFC, fiducie civile, constituant, fiduciaire, bénéficiaire, patrimoine d'affectation, opposabilité erga omnes, FAC-Mère, FAC-Fille, DBA (Droit Bénéficiaire Adhérent), oracle civil, ACC, RFC. Les termes techniques sont définis par la Doctrine.
 
 ## Co-fondateurs
 

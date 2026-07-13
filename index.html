@@ -92,7 +92,7 @@
       "@type": "Service",
       "@id": "https://civil-fi.org/#standard",
       "name": "Standard PAFC®",
-      "alternateName": "Protocole d'Architecture Fiduciaire Compartimentée",
+      "alternateName": "Le protocole d'architecture fiduciaire de Civil-Fi",
       "description": "Premier protocole publié de Civil-Fi. Doctrine v4.0 (280 pages, addenda F1-F6 / D1-D6 / E1-E6). Versionnée, datée, déposée Soleau, opposable. Quatre principes : hors AMF, opposable, traçable, versionné.",
       "provider": { "@id": "https://civil-fi.org/#organization" },
       "serviceType": "Legal infrastructure standard",
@@ -110,7 +110,7 @@
         {
           "@type": "Question",
           "name": "Qu'est-ce que le standard PAFC® ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "PAFC® (Protocole d'Architecture Fiduciaire Compartimentée) est le premier protocole publié de Civil-Fi. Doctrine v4.0 — 280 pages, addenda F1-F6 / D1-D6 / E1-E6 — versionnée, datée, déposée Soleau, opposable. Décrit la structure FAC-Mère / FAC-Fille, le blindage contractuel maximal (PBCM), les oracles civils (STOC), et les droits civils nommés DBA / DPC." }
+          "acceptedAnswer": { "@type": "Answer", "text": "PAFC® est le protocole d'architecture fiduciaire de Civil-Fi, premier protocole publié du standard. Doctrine v4.0 — 280 pages, addenda F1-F6 / D1-D6 / E1-E6 — versionnée, datée, déposée Soleau, opposable. Décrit la structure FAC-Mère / FAC-Fille, le mécanisme d'étanchéité inter-compartiments défini par la Doctrine, la spécification technique des oracles civils, et les droits civils nommés, au premier rang desquels le Droit Bénéficiaire Adhérent (DBA)." }
         },
         {
           "@type": "Question",
@@ -2914,7 +2914,7 @@ body.modal-open { overflow: hidden; }
 }
 .archi-compare-rows {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
   font-family: 'Poppins', sans-serif;
 }
@@ -3889,7 +3889,7 @@ footer::before {
           <div class="hero-verbs" data-animate>
             <span class="hero-verb">Hériter</span>
             <span class="hero-verb-sep">·</span>
-            <span class="hero-verb">Investir</span>
+            <span class="hero-verb">Détenir</span>
             <span class="hero-verb-sep">·</span>
             <span class="hero-verb">Transmettre</span>
             <span class="hero-verb-sep">·</span>
@@ -3901,7 +3901,7 @@ footer::before {
             <span class="line"><span>Le standard français</span></span>
             <span class="line"><span>de la <em>fiducie civile.</em></span></span>
           </h1>
-          <p>Civil-Fi est l'infrastructure juridique qui rend opérable la fiducie civile française à grande échelle — pour détenir un actif réel sans le convertir en produit financier. <strong style="color:var(--peach);font-weight:600;">Hors AMF, opposable, traçable.</strong></p>
+          <p>Civil-Fi PAFC® est l'OS de la fiducie civile française — le code, le registre, les versions, les praticiens certifiés — pour détenir un actif réel sans le convertir en produit financier. <strong style="color:var(--peach);font-weight:600;">Hors AMF, opposable, traçable.</strong></p>
           <div class="hero-buttons" data-animate>
             <a href="#en-clair" class="btn" data-magnetic>Comprendre en 2 minutes</a>
             <a href="#cas" class="btn btn-outline" data-magnetic>Voir des cas concrets</a>
@@ -3989,29 +3989,29 @@ footer::before {
       <div class="s2-inner">
         <span class="label" data-animate>L'arborescence du standard</span>
         <h2>Une catégorie, un protocole,<br><em>une autorité</em>.</h2>
-        <p data-animate style="max-width: 720px; margin-top: 1rem; font-size: 1.05rem;">Civil-Fi désigne un <strong>nouveau genre normatif</strong>. PAFC est son premier protocole. L'Institut en est l'autorité publiante. Trois rôles distincts, trois temps de la norme — comme une famille de standards documentaires.</p>
+        <p data-animate style="max-width: 720px; margin-top: 1rem; font-size: 1.05rem;">Civil-Fi désigne un <strong>nouveau genre normatif</strong>. PAFC est son premier protocole. L'Institut publie et tient le standard. Trois rôles distincts, trois temps de la norme — comme une famille de standards documentaires.</p>
 
         <div class="primer-grid">
 
           <article class="primer-card" data-animate>
-            <div class="primer-card-ico">🌱</div>
+            <div class="primer-card-ico" aria-hidden="true">🌱</div>
             <div class="primer-card-eq">— La catégorie normative</div>
             <h3>Civil-<span>Fi</span></h3>
-            <p>Genre de finance nouvelle, fondé sur le <strong>droit civil français</strong> et non sur la régulation des marchés financiers. La <em>Finance Fiduciaire Civile</em> — patrimoines d'affectation, droits civils nommés, opposabilité <em>erga omnes</em>.</p>
+            <p>Genre de finance nouvelle, fondé sur le <strong>droit civil français</strong> et non sur la régulation des marchés financiers. La <em>Finance Fiduciaire Civile</em> — patrimoines d'affectation, droits civils nommés, opposabilité <em>erga omnes</em> (c'est-à-dire à tous).</p>
             <div class="primer-analog">Comme <strong>« .com »</strong> nomme un genre d'objets sur Internet, <strong>Civil-Fi</strong> nomme un genre d'opérations dans l'écosystème juridique français.</div>
           </article>
 
           <article class="primer-card" data-animate>
-            <div class="primer-card-ico">⚙️</div>
+            <div class="primer-card-ico" aria-hidden="true">⚙️</div>
             <div class="primer-card-eq">— Le premier protocole publié</div>
             <h3><span>PAFC</span>®</h3>
-            <p>Protocole d'Architecture Fiduciaire Compartimentée — <strong>v4.0, doctrine de 280 pages</strong>, addenda F1-F6 / D1-D6 / E1-E6. Versionné, daté, opposable. D'autres protocoles pourront émerger sous l'autorité de l'Institut, qui les normalise.</p>
+            <p>Le protocole d'architecture fiduciaire de Civil-Fi — <strong>v4.0, doctrine de 280 pages</strong>, addenda F1-F6 / D1-D6 / E1-E6. Versionné, daté, opposable. D'autres protocoles pourront émerger sous l'autorité de l'Institut, qui les normalise.</p>
             <div class="primer-analog">Comme <strong>HTTP</strong> est l'un des protocoles d'Internet — aux côtés de FTP, SMTP, SSH — <strong>PAFC</strong> est le premier protocole de Civil-Fi.</div>
           </article>
 
           <article class="primer-card" data-animate>
-            <div class="primer-card-ico">🏛️</div>
-            <div class="primer-card-eq">— L'autorité publiante</div>
+            <div class="primer-card-ico" aria-hidden="true">🏛️</div>
+            <div class="primer-card-eq">— Publie et tient le standard</div>
             <h3>L'<span>Institut</span></h3>
             <p>Personne morale publiante. Trois organes : l'<strong>Académie</strong> (formation), le <strong>Comité de Surveillance</strong> (juridiction), le <strong>Registre Fiduciaire Central</strong> (publication). Quatre dépôts Soleau, marques INPI, OJP signée.</p>
             <div class="primer-analog">Comme <strong>l'AFNOR</strong> publie les normes NF, comme <strong>l'IFRS Foundation</strong> publie les IFRS, l'Institut publie et tient Civil-Fi.</div>
@@ -4062,7 +4062,7 @@ footer::before {
 
       <article class="enclair-card" data-animate>
         <div class="enclair-q">4 — Ça change quoi ?</div>
-        <p class="enclair-a">Un exemple réel : <strong>une cinquantaine de personnes possèdent ensemble une villa dans l'Ain.</strong> Chacune détient un droit réel sur le bien et une part de sa performance — pas une action, pas un placement financier. <a href="/fm-001" style="color: var(--burgundy); font-weight: 700;">Voir le cas →</a></p>
+        <p class="enclair-a">Un exemple concret en cours de déploiement : <strong>une cinquantaine de personnes s'apprêtent à détenir ensemble une villa dans l'Ain.</strong> Chacune détient un droit civil enregistré sur le projet — un droit d'appartenance, d'usage et de suivi — pas une action, pas une part de rendement, pas un placement financier. <a href="/fm-001" style="color: var(--burgundy); font-weight: 700;">Voir le cas →</a></p>
       </article>
     </div>
 
@@ -4082,19 +4082,19 @@ footer::before {
 
     <div class="stats-card" data-animate>
       <div class="stat-item">
-        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="5">0</span></div>
-        <div class="stat-lbl">Verticales déployables</div>
+        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="4">4</span></div>
+        <div class="stat-lbl">Verticales ouvertes</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="12">0</span></div>
+        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="12">12</span></div>
         <div class="stat-lbl">Documents normatifs</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="80">0</span></div>
-        <div class="stat-lbl">Termes lexicaux normés</div>
+        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="14">14</span></div>
+        <div class="stat-lbl">Termes de la couche publique</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="4">0</span></div>
+        <div class="stat-num"><span class="dot">•</span><span class="stat-counter" data-target="4">4</span></div>
         <div class="stat-lbl">Versions de la doctrine</div>
       </div>
     </div>
@@ -4142,7 +4142,7 @@ footer::before {
           <div class="archi-layer-name">Le <em>protocole PAFC®</em></div>
         </div>
         <div class="archi-layer-body">
-          <p>Premier protocole publié de Civil-Fi : <strong>Protocole d'Architecture Fiduciaire Compartimentée</strong>. Il décrit la structure FAC-Mère / FAC-Fille, le mécanisme de blindage contractuel maximal (PBCM), les oracles civils (STOC) et les droits civils nommés DBA / DPC.</p>
+          <p><strong>PAFC® — le protocole d'architecture fiduciaire de Civil-Fi</strong>, premier protocole publié du standard. Il décrit la structure FAC-Mère / FAC-Fille, le mécanisme d'étanchéité inter-compartiments défini par la Doctrine, la spécification technique des oracles civils, et les droits civils nommés — au premier rang desquels le Droit Bénéficiaire Adhérent (DBA), les autres catégories étant définies par la Doctrine.</p>
           <p>La doctrine v4.0 — <strong>280 pages, addenda F1-F6 / D1-D6 / E1-E6</strong> — est le texte de référence opérationnel. Versionnée, datée, déposée Soleau (4 dépôts), opposable.</p>
         </div>
         <div class="archi-layer-meta">
@@ -4151,18 +4151,18 @@ footer::before {
             <dt>Doctrine</dt>
             <dd>v4.0 · 280 pages · 18.04.2026</dd>
             <dt>Lexique normé</dt>
-            <dd>80 termes définis</dd>
+            <dd>14 termes publics · index Doctrine</dd>
             <dt>Documents normatifs</dt>
             <dd>12 textes versionnés</dd>
           </dl>
         </div>
       </div>
 
-      <!-- Couche III — L'autorité publiante -->
+      <!-- Couche III — L'Institut publie et tient le standard -->
       <div class="archi-layer" data-animate>
         <div>
           <div class="archi-layer-num">Couche III — L'institution</div>
-          <div class="archi-layer-name">L'<em>autorité publiante</em></div>
+          <div class="archi-layer-name">L'Institut <em>publie et tient</em></div>
         </div>
         <div class="archi-layer-body">
           <p>L'<strong>Institut Civil-Fi PAFC®</strong> publie le standard, le versionne, l'amende. Il s'appuie sur trois organes distincts : l'<strong>Académie</strong> (CCA, formation et accréditation), le <strong>Comité de Surveillance</strong> (CCS, juridiction collégiale), le <strong>Registre Fiduciaire Central</strong> (RFC, publication horodatée).</p>
@@ -4212,7 +4212,7 @@ footer::before {
         </div>
         <div class="archi-layer-body">
           <p>Le <strong>Registre Fiduciaire Central</strong> indexe publiquement chaque praticien certifié, chaque cabinet licencié, chaque projet labellisé, chaque cachet apposé. Vérifiable en libre accès, horodaté, signé.</p>
-          <p>C'est l'équivalent d'un <strong>SWIFT pour la fiducie civile</strong> — pas un système de paiement, mais un système de vérification d'identité institutionnelle. Chaque opération PAFC laisse une empreinte vérifiable par n'importe qui.</p>
+          <p>Le RFC est au standard ce que le <strong>noyau est à un système d'exploitation</strong> : la couche que tout le monde utilise et que personne ne réécrit. Chaque opération PAFC y laisse une empreinte vérifiable par n'importe qui.</p>
         </div>
         <div class="archi-layer-meta">
           <div class="archi-layer-meta-title">Garanties</div>
@@ -4258,8 +4258,12 @@ footer::before {
           <div class="what">Normes internationales · 9001, 14001, 27001…</div>
         </div>
         <div>
+          <div class="who">Système d'exploitation</div>
+          <div class="what">Un noyau commun · des usages construits par-dessus</div>
+        </div>
+        <div>
           <div class="who">Civil-Fi · Institut</div>
-          <div class="what">Standard fiduciaire civil · publié et tenu</div>
+          <div class="what">L'OS de la fiducie civile · publié et tenu</div>
         </div>
       </div>
     </div>
@@ -4703,7 +4707,7 @@ footer::before {
       <div class="parcours-step">
         <div class="parcours-step-num">2</div>
         <h5>Examen</h5>
-        <p>Épreuve écrite supervisée par le CCA. Cas pratiques sur les 5 verticales.</p>
+        <p>Épreuve écrite supervisée par le CCA. Cas pratiques sur les 4 verticales ouvertes.</p>
       </div>
       <div class="parcours-step">
         <div class="parcours-step-num">3</div>
@@ -4883,7 +4887,7 @@ footer::before {
         </svg>
         <input type="text" placeholder="Identifiant projet (ex. FM-001-V1) ou nom du licencié…" value="FM-001-V1">
       </div>
-      <div class="rfc-search-hint">Format : FM-{ID}-V{verticale} pour un projet · CCFP-{N°} pour un praticien · ACC-{réf}-{année} pour un cachet</div>
+      <div class="rfc-search-hint">Essayez : <a href="#" id="rfcTryExample" style="color: var(--terracotta); font-weight: 700; text-decoration: underline;">FM-001-V1</a> — ou un numéro CCFP, ou une référence ACC</div>
 
       <!-- CTA Registre — sous la search bar -->
       <div class="section-cta" style="margin-top: 1.4rem; margin-bottom: 1.4rem; justify-content: flex-start; gap: 0.6rem;">
@@ -4901,10 +4905,10 @@ footer::before {
           Pilote opéré par RealSmart, premier licencié exclusif sur la verticale immobilière.
         </p>
         <dl class="rfc-result-meta">
-          <dt>Statut</dt><dd>En déploiement · ACC apposé le 18.04.2026</dd>
+          <dt>Statut</dt><dd>Structuration finale · signature imminente</dd>
+          <dt>Cachet</dt><dd>ACC de pré-déploiement apposé le 18.04.2026</dd>
           <dt>Licencié</dt><dd>RealSmart® (FAC-Mère exclusive V1)</dd>
-          <dt>Praticien</dt><dd>CCFP-0001 — Me Pierre-Alain Ravot (AARPI Fiducie Legal)</dd>
-          <dt>Adhérents</dt><dd>≈50 (capacité maximale 100)</dd>
+          <dt>Adhérents engagés</dt><dd>≈50 (capacité maximale 100)</dd>
           <dt>Renouvellement</dt><dd>ACC valide jusqu'au 18.04.2028</dd>
         </dl>
         <a href="/fm-001" class="rfc-result-link">Consulter l'étude de cas complète →</a>
@@ -4928,7 +4932,7 @@ footer::before {
     <div class="tier tier--public">
       <span class="tier-badge">Public</span>
       <h5>Lecture libre</h5>
-      <p>Charte, score, doctrine d'introduction, spécifications oracles.</p>
+      <p>Charte, score, doctrine d'introduction, annuaire du Registre.</p>
     </div>
     <div class="tier tier--id">
       <span class="tier-badge">Identifié</span>
@@ -5069,9 +5073,9 @@ footer::before {
           <span class="lib-card-v2-acro">STOC</span>
         </div>
         <h4>Spécification Oracles Civils</h4>
-        <p>Architecture API, standards cryptographiques, blockchain de référence agnostique. Empreintes probatoires non transférables, hors qualification crypto-actif.</p>
+        <p>Spécification technique de la couche de vérification. Accès sous accord de confidentialité pendant la phase de protection de la propriété industrielle.</p>
         <div class="lib-card-v2-foot">
-          <span class="badge badge--public">Public</span>
+          <span class="badge badge--nda">NDA</span>
           <span class="lib-card-version">v1.0 · 04.2026</span>
         </div>
         <span class="lib-card-v2-arrow">→</span>
@@ -5082,10 +5086,10 @@ footer::before {
           <div class="lib-card-v2-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <span class="lib-card-v2-acro">PBCM</span>
+          <span class="lib-card-v2-acro">Étanchéité</span>
         </div>
-        <h4>Blindage Contractuel Maximal</h4>
-        <p>Kit de cinq mécanismes cumulatifs garantissant l'étanchéité inter-compartiments des FAC-Filles. Doctrine défensive contre la confusion de patrimoines.</p>
+        <h4>Mécanisme d'étanchéité inter-compartiments</h4>
+        <p>Kit de mécanismes cumulatifs défini par la Doctrine, garantissant l'étanchéité entre FAC-Filles. Doctrine défensive contre la confusion de patrimoines.</p>
         <div class="lib-card-v2-foot">
           <span class="badge badge--ccfp">CCFP</span>
           <span class="lib-card-version">v3.5 · 03.2026</span>
@@ -5117,7 +5121,7 @@ footer::before {
       <span class="lib-cat-num">04</span>
       <div>
         <h3>Index &amp; lexique<span class="lib-cat-count">— 3 documents</span></h3>
-        <p>Les outils de référence : 80 termes lexicaux normés, l'annuaire public RFC, et les FAQ certifiées par le Comité.</p>
+        <p>Les outils de référence : la couche publique de 14 termes du Lexique Officiel, l'annuaire public RFC, et les FAQ certifiées par le Comité.</p>
       </div>
     </div>
     <div class="lib-grid-v2">
@@ -5128,11 +5132,11 @@ footer::before {
           </div>
           <span class="lib-card-v2-acro">Lexique</span>
         </div>
-        <h4>Lexique normatif Civil-Fi</h4>
-        <p>Définitions formelles des 80 termes-clés du standard : DBA, DPC, FAC-Mère, FAC-Fille, oracle, score, ACC, RFC, PBCM, et leurs équivalents internationaux.</p>
+        <h4>Lexique Officiel Civil-Fi</h4>
+        <p>La couche publique de 14 termes du standard — fiducie civile, FAC-Mère, FAC-Fille, DBA, ACC, RFC… — et l'index des termes techniques renvoyés à la Doctrine.</p>
         <div class="lib-card-v2-foot">
           <span class="badge badge--id">Identifié</span>
-          <span class="lib-card-version">v2.1 · 04.2026</span>
+          <span class="lib-card-version">v1.0 · 04.2026</span>
         </div>
         <span class="lib-card-v2-arrow">→</span>
       </a>
@@ -5244,9 +5248,9 @@ footer::before {
       </svg>
     </div>
     <h2>Rejoignez<br>le <em>standard</em>.</h2>
-    <p>Banques, cabinets d'avocats, études notariales, fonds institutionnels — Civil-Fi est l'infrastructure normative qui rend la fiducie civile française déployable à grande échelle. Une licence, un standard, une autorité publiante.</p>
-    <a href="#" class="cta-mega-btn" data-modal="contact" data-purpose="general">
-      <span>Rejoindre l'Institut</span>
+    <p>Banques, cabinets d'avocats, études notariales, fonds institutionnels — Civil-Fi est l'infrastructure normative qui rend la fiducie civile française déployable à grande échelle. Une licence, un standard, un registre public.</p>
+    <a href="mailto:contact@realsmart.com?subject=Devenir%20cabinet%20licenci%C3%A9" class="cta-mega-btn" data-modal="contact" data-purpose="licence">
+      <span>Devenir cabinet licencié</span>
       <span class="cta-mega-arrow">→</span>
     </a>
     <div class="cta-mega-foot">
@@ -5706,10 +5710,11 @@ const RFC_DATA = {
       title: 'FM-001-V1 — Villa Tenay (Verticale 1 · Immobilier)',
       desc: 'Pilote opéré par RealSmart, premier licencié exclusif sur la verticale immobilière.',
       meta: [
-        ['Statut', 'En déploiement · ACC apposé le 18.04.2026'],
+        ['Statut', 'Structuration finale · signature imminente'],
+        ['Cachet', 'ACC de pré-déploiement apposé le 18.04.2026'],
         ['Licencié', 'RealSmart® (FAC-Mère exclusive V1)'],
         ['Praticien', 'CCFP-0001 — Me Pierre-Alain Ravot (AARPI Fiducie Legal)'],
-        ['Adhérents', '≈50 (capacité maximale 100)'],
+        ['Adhérents engagés', '≈50 (capacité maximale 100)'],
         ['Renouvellement', 'ACC valide jusqu’au 18.04.2028']
       ],
       link: { href: '/fm-001', label: 'Consulter l’étude de cas complète →' }
@@ -5821,6 +5826,15 @@ const RFC_DATA = {
   });
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { clearTimeout(t); search(input.value); }
+  });
+
+  // Exemple cliquable "essayez : FM-001-V1"
+  const tryEx = document.getElementById('rfcTryExample');
+  if (tryEx) tryEx.addEventListener('click', (e) => {
+    e.preventDefault();
+    input.value = 'FM-001-V1';
+    input.focus();
+    search('FM-001-V1');
   });
 })();
 </script>
@@ -6037,6 +6051,7 @@ if (document.readyState === 'loading') {
           </button>
           <span class="modal-foot-note">Réponse sous 48 h ouvrées</span>
         </div>
+        <p style="font-size: 0.68rem; color: var(--muted); line-height: 1.5; margin-top: 0.9rem;">Les données de ce formulaire servent uniquement à traiter votre demande (base légale : intérêt légitime ; consentement pour les Bulletins). Conservation 3 ans maximum. Vos droits et notre <a href="/confidentialite" style="color: var(--burgundy); font-weight: 700;">politique de confidentialité</a>.</p>
       </form>
     </div>
 
@@ -6049,7 +6064,7 @@ if (document.readyState === 'loading') {
       </div>
       <h3>Message <em>envoyé</em>.</h3>
       <span class="modal-success-meta">Réponse sous 48 h ouvrées</span>
-      <p>Merci. L'Institut a bien reçu votre demande. Une réponse vous sera transmise à l'adresse e-mail indiquée, sous le sceau du secret professionnel.</p>
+      <p>Merci. L'Institut a bien reçu votre demande. Une réponse vous sera transmise à l'adresse indiquée. Votre demande est traitée de manière confidentielle, conformément à notre <a href="/confidentialite" style="color: var(--burgundy); font-weight: 700;">politique de confidentialité</a>.</p>
       <button type="button" class="modal-submit" id="modalCloseSuccess">Fermer</button>
     </div>
   </div>
